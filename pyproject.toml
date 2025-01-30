@@ -1,0 +1,18 @@
+[tool.poetry]
+name = "hexlet-flask-users"
+version = "0.1.0"
+description = ""
+authors = ["i-pichurov <deadbassein@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+flask = "^3.1.0"
+psycopg2-binary = "^2.9.10"
+load-dotenv = "^0.1.0"
+gunicorn = "^23.0.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
