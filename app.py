@@ -26,6 +26,18 @@ conn = psycopg2.connect(app.config['DATABASE_URL'])
 repo = UserRepository(conn)
 
 
+create_base_query = """
+CREATE TABLE IF NOT EXISTS users (
+    id SERIAL PRIMARY KEY,
+    name VARCHAR(255) NOT NULL,
+    email VARCHAR(255) NOT NULL
+);
+"""
+
+with conn.cursor() as curs:
+    curs.execute(create_base_query)
+    conn.commit()
+
 @app.route('/')
 def index():
     return render_template('home.html')
